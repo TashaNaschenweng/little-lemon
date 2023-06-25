@@ -1,5 +1,4 @@
-import { Image, Pressable, Text, View } from "react-native";
-import { StyleSheet } from "react-native";
+import { Image, StyleSheet, Pressable, Text, View } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 import useAuth from "../auth/useAuth";

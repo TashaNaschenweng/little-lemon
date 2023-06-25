@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import * as ImagePicker from "expo-image-picker";
 import Checkbox from "expo-checkbox";
-
 import { mask } from "react-native-mask-text";
 
 import useAuth from "../auth/useAuth";

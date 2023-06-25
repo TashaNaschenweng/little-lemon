@@ -1,23 +1,21 @@
-import { Platform } from "react-native";
 import Constants from "expo-constants";
 
 import colors from "./colors";
 
 export default {
   appContainer: {
+    flex: 1,
     width: "100%",
-    height: "100%",
     backgroundColor: colors.white,
   },
   viewContainer: {
+    flex: 1,
     width: "100%",
-    height: "100%",
     backgroundColor: colors.light,
     paddingTop: Constants.statusBarHeight,
   },
   contentContainer: {
     width: "100%",
-    height: "100%",
     paddingLeft: 10,
     paddingRight: 10,
     marginVertical: 5,
@@ -33,10 +31,6 @@ export default {
     display: "flex",
     height: 45,
     justifyContent: "center",
-  },
-  btnNone: {
-    backgroundColor: "transparent",
-    marginVertical: 10,
   },
   btnOutline: {
     backgroundColor: "transparent",
@@ -67,24 +61,6 @@ export default {
     textAlign: "center",
   },
 
-  text: {
-    color: colors.dark,
-    fontSize: 18,
-    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
-  },
-  textPrimary: {
-    color: colors.primaryGreen,
-    fontSize: 18,
-    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
-  },
-  textFieldLabel: {
-    fontSize: 16,
-    fontFamily: "Karla-Regular",
-    color: colors.dark,
-    textAlign: "left",
-    paddingBottom: 2,
-    marginTop: 10,
-  },
   textSectionTitle: {
     fontSize: 20,
     fontFamily: "Karla-Bold",
@@ -97,18 +73,6 @@ export default {
     fontFamily: "MarkaziText-Medium",
     color: colors.primaryGreen,
     textAlign: "center",
-  },
-
-  inputField: {
-    alignSelf: "stretch",
-    marginBottom: 10,
-    padding: 10,
-    fontSize: 16,
-    borderRadius: 8,
-    backgroundColor: colors.white,
-    borderColor: colors.medium,
-    borderWidth: 1,
-    height: 50,
   },
 
   message: {

@@ -6,7 +6,7 @@ const storeUser = async (user) => {
   try {
     await SecureStore.setItemAsync(key, JSON.stringify(user));
   } catch (error) {
-    console.log("Error storing the user", error);
+    console.error("Error storing the user", error);
   }
 };
 
@@ -15,7 +15,7 @@ const getUser = async () => {
     const user = await SecureStore.getItemAsync(key);
     return JSON.parse(user);
   } catch (error) {
-    console.log("Error getting the user", error);
+    console.error("Error getting the user", error);
   }
 };
 
@@ -23,7 +23,7 @@ const deleteUser = async () => {
   try {
     await SecureStore.deleteItemAsync(key);
   } catch (error) {
-    console.log("Error removing the user", error);
+    console.error("Error removing the user", error);
   }
 };
 
