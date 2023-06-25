@@ -4,7 +4,12 @@ import Constants from "expo-constants";
 import debounce from "lodash.debounce";
 
 import menuApi from "../api/menuApi";
-import menuStorage from "../store/menuStorage";
+import {
+  createTable,
+  createMenuItems,
+  getMenuItems,
+  filterByQueryAndCategories,
+} from "../store/menuStorage";
 import { useUpdateEffect } from "../utils";
 
 import Header from "../components/Header";
@@ -25,12 +30,12 @@ const HomeScreen = ({ navigation }) => {
 
   useEffect(() => {
     (async () => {
-      await menuStorage.createTable();
-      let menuItems = await menuStorage.getMenuItems();
+      await createTable();
+      let menuItems = await getMenuItems();
 
       if (!menuItems?.length) {
         menuItems = await menuApi.getMenuItems();
-        await menuStorage.createMenuItems(menuItems);
+        await createMenuItems(menuItems);
       }
 
       setMenuItems(menuItems);
@@ -53,12 +58,10 @@ const HomeScreen = ({ navigation }) => {
         return selectedCategories[i];
       });
 
-      let menuItems = await menuStorage.filterByQueryAndCategories(
+      let menuItems = await filterByQueryAndCategories(
         query,
         activeCategories.length ? activeCategories : sections
       );
-
-      //let menuItems = await menuStorage.getMenuItems();
 
       setMenuItems(menuItems);
     })();
