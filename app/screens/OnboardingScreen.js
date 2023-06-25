@@ -12,7 +12,7 @@ import Button from "../components/forms/Button";
 
 import defaultStyles from "../theme/styles";
 
-const RegisterScreen = ({ navigation }) => {
+const OnboardingScreen = ({ navigation }) => {
   const [user, setUser] = useState(userModel);
   const [runValidation, setRunValidation] = useState(false);
 
@@ -112,7 +112,7 @@ const RegisterScreen = ({ navigation }) => {
         />
 
         <Button
-          title="Register"
+          title="Next"
           style={[defaultStyles.btnPrimary, { marginVertical: 15 }]}
           textColor={defaultStyles.colors.dark}
           onPress={handleSubmit}
@@ -122,4 +122,4 @@ const RegisterScreen = ({ navigation }) => {
   );
 };
 
-export default RegisterScreen;
+export default OnboardingScreen;

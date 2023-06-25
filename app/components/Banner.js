@@ -1,6 +1,5 @@
 import { View, Text, Image, StyleSheet } from "react-native";
-
-import FormField from "./forms/FormField";
+import { Searchbar } from "react-native-paper";
 
 import defaultStyles from "../theme/styles";
 
@@ -22,10 +21,12 @@ const Banner = ({ searchText, handleSearchChange }) => {
           source={require("../assets/images/hero-image.png")}
         />
       </View>
-      <FormField
+      <Searchbar
         onChangeText={handleSearchChange}
         value={searchText}
-        placeholder="Search"
+        style={styles.searchBar}
+        iconColor={defaultStyles.colors.medium}
+        elevation={0}
       />
     </View>
   );
@@ -63,6 +64,18 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 12,
+  },
+  searchBar: {
+    backgroundColor: defaultStyles.colors.white,
+    borderColor: defaultStyles.colors.medium,
+    borderRadius: 8,
+    borderWidth: 1,
+    fontSize: 16,
+    width: "100%",
+    marginBottom: 10,
+    marginTop: 30,
+    shadowRadius: 0,
+    shadowOpacity: 0,
   },
 });
 

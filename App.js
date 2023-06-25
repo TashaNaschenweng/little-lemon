@@ -9,7 +9,7 @@ import userStorage from "./app/store/userStorage";
 import { navigationRef } from "./app/navigation/rootNavigation";
 import AuthContext from "./app/auth/context";
 
-import RegisterScreen from "./app/screens/RegisterScreen";
+import OnboardingScreen from "./app/screens/OnboardingScreen";
 import HomeScreen from "./app/screens/HomeScreen";
 import ProfileScreen from "./app/screens/ProfileScreen";
 
@@ -84,8 +84,8 @@ export default function App() {
             ) : (
               <Stack.Screen
                 options={{ headerShown: false }}
-                name="Register"
-                component={RegisterScreen}
+                name="Onboarding"
+                component={OnboardingScreen}
               />
             )}
           </Stack.Navigator>
